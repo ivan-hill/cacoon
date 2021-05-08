@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cacoon | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</head>
+<body onload="document.body.style.opacity='1'"> 
+   
+   <div class="header">
+       <div data-aos="fade-up"
+       data-aos-delay="10"
+       data-aos-duration="1000"
+       data-aos-easing="ease-in-out"
+       data-aos-mirror="true"
+       data-aos-once="false"
+       data-aos-anchor-placement="top-center"
+      class="container">
+          <div class="navbar">
+              <div class="logo">
+                  <a href="index.html"><img src="images/cacoonlogo.png" width="125px"></a>
+              </div>
+              <nav>
+               <ul id="MenuItems">
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="about.html">About</a></li>
+                   <li><a href="">Contact</a></li>
+                   <li><a href="account.html">Account</a></li>
+               </ul>
+              </nav>
+              <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+              <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+          </div>
+           <div class="row">
+                <div class="col-2">
+
+                    <h1>Live the Life of <br>Your Dreams!</h1>
+                    <p>
+                      Here at Cacoon, we're commited to providing the most memorable experience possible.
+                    </p></br>
+                    <p>
+                      Whether you're going out on the town, or trying to land your next account, our late model vehiciles, award-winning stylist, and internationally recognized photogtaphy staff, are commited to the highest level of excellence.
+                    </p>
+                    
+                </div>
+                <div class="col-2">
+                    <img src="images/maybach.png">
+                </div>
+               
+           </div>
+           
+       </div>
+       </div>
+<!------------------ featured categories --------------->
+<main data-scroll-container horizontal>
+    <section data-scroll-section class="sec-1">
+      <div class="lines">
+        <h1 data-scroll data-scroll-speed="2">Cacoon</h1>
+        <h2 data-scroll data-scroll-speed="3">Luxury</h2>
+        
+        <h1 data-scroll data-scroll-speed="1">Experience</h1>
+        <h1 data-scroll data-scroll-speed="5">Maker</h1>
+        <h1 data-scroll data-scroll-speed="6">Services</h1>
+        
+      </div>
+      <div class="mask mask-sec-1">
+        <img
+          data-scroll
+          data-scroll-speed="-2"
+          src="images/cacoonlogo.svg" alt="logo"
+        />
+      </div>
+    </section>
+    <section data-scroll-section class="sec-2">
+     
+      
+    </section>
+    
+  </main>
+  
+</body>
+<!----------Footer---------------> 
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col1">
+               <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col2">
+               <img src="images/cacoonlogo.png">
+                <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+            </div>
+            <div class="footer-col3">
+               <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col4">
+               <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter<li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright"><a href="">Ivan Hill | Junior Web Developer</a></p>
+    </div>
+    
+</div>
+
+
+
+<!-------------js for toggle menu-------------->
+
+<script>
+    
+    var MenuItems = document.getElementById("MenuItems");
+    
+    MenuItems.style.maxHeight = "0px";
+    
+    function menutoggle()
+    {
+        if(MenuItems.style.maxHeight == "0px")
+            {
+                MenuItems.style.maxHeight = "200px";
+            }else
+            {
+                MenuItems.style.maxHeight = "0px"
+            } 
+    }
+    
+</script>
+<script>
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    smoothMobile: false,
+    direction: 'horizontal',
+    inertia: 0.8,
+    repeat: true,
+  })
+
+  const bttBtn = document.getElementById('back-to-top-btn')
+  bttBtn.addEventListener(
+    'click',
+    function () {
+      locoScroll.scrollTo(0)
+    },
+    false
+  )
+
+  const tl = gsap.timeline()
+  const maskSec1 = document.querySelector('.mask-sec-1')
+  tl.from(maskSec1, {
+    opacity: 0,
+    x: '-100px',
+    duration: 1.5,
+    ease: 'power3.out',
+  }).from(
+    '.lines > h1',
+    {
+      opacity: 0,
+      x: '100px',
+      stagger: 0.15,
+      duration: 1.2,
+      ease: 'power3.inOut',
+    },
+    'start-=1.45'
+  )
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+</body>
+</html>
+
